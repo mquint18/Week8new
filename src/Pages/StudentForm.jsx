@@ -1,8 +1,9 @@
 import { useState } from "react";
 import NewInput from "../Components/NewInput";
+import Button from "../Components/Button";
 
 
-function StudentForm({}){
+function StudentForm(){
 
     const [student, setStudent] = useState({
         firstName: "",
@@ -13,19 +14,33 @@ function StudentForm({}){
 
     const [students, setStudents] = useState([]);
 
-    function AddStudent(){
+    function handleChange(e) {
+        setStudent({
+            ...student,
+            [e.target.name]: e.target.value
+        });
+            }   
 
-        if (name === ""){
-            alert("Please Enter a Student Name")
-            return;
+    function handleSubmit(e) {
+        e.preventDefault();
+        AddStudent();
         }
 
-        setStudents([... students]);
+    function AddStudent(){
+
+    
+        setStudents([...students, student]);
+        setStudent({
+            firstName: "",
+            lastName: "",
+            gradYear: "",
+            course: ""
+            });
     }
     return(
         <div>
 
-            <form onSubmit="{handleSubmit}">
+            <form onSubmit={handleSubmit}>
 
                 <NewInput
                     name= "firstName"
@@ -59,15 +74,37 @@ function StudentForm({}){
                     <option value="Math">Math</option>
                     <option value="Science">Science</option>
                     <option value="Writing">Writing</option>
-                    <option value="Education"></option>
+                    <option value="Education">Education</option>
                 </select>
 
 
-
+                <Button
+                    text = "Submit"
+                    onClick ={AddStudent}
+                />
 
             </form>
 
 
+            <div className="student-list">
+            <h2>My Students</h2>
+            <div>
+                {students.map((s, index) => (
+            <div key={index}>
+            <h3>
+                {s.firstName} {s.lastName}
+            </h3>
+
+            <p>Graduation Year: {s.gradYear}</p>
+            <p>Course: {s.course}</p>
+            </div>
+  ))}
+            </div>
+
+          
+            
+
+        </div>
         </div>
     )
 }

@@ -1,13 +1,13 @@
 import { useState } from "react";
 import NewInput from "../Components/NewInput";
 import Button from "../Components/Button";
+import StudentForm from "./StudentForm";
 
-function StudentList(){
-
+function StudentList({students}){
+/*
     const [student, setStudent] = useState({
         firstName: "",
         lastName: "",
-        studentID: "",
         gradYear: "",
         course: ""
     });
@@ -25,20 +25,26 @@ function StudentList(){
         setStudents([... students]);
 
     }
-
+*/
     return(
         <div className="student-list">
             <h2>My Students</h2>
+            <div>
+                {students.map((s, index) => (
+            <div key={index}>
+            <h3>
+                {s.firstName} {s.lastName}
+            </h3>
 
-          <NewInput
-            value = {student}
-            placeholder = "Enter full name"
-            onChange = {(e) => setStudent(e.target.value)}
-            />
+            <p>Graduation Year: {s.gradYear}</p>
+            <p>Course: {s.course}</p>
+            </div>
+  ))}
+            </div>
 
            <Button
             text = "Add Student"
-            onClick={AddStudent}
+            onClick={StudentForm}
            />
             
 
