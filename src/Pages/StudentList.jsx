@@ -4,7 +4,14 @@ import Button from "../Components/Button";
 
 function StudentList(){
 
-    const [student, setStudent] = useState({});
+    const [student, setStudent] = useState({
+        firstName: "",
+        lastName: "",
+        studentID: "",
+        gradYear: "",
+        course: ""
+    });
+
     const [students, setStudents] = useState([]);
 
 

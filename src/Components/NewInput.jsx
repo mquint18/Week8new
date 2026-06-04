@@ -1,7 +1,6 @@
 
 function NewInput({
     name,
-    grade,
     value,
     onChange,
     placeholder
@@ -10,13 +9,12 @@ function NewInput({
     return(
 
        <input 
-       type="text" 
        className="input" 
        name = {name}
-       grade = {grade}
        value= {value}
        onChange={onChange}
        placeholder={placeholder}
+       type="text" 
        />
     )
 }
