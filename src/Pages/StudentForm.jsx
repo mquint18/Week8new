@@ -1,6 +1,7 @@
 import { useState } from "react";
 import NewInput from "../Components/NewInput";
 import Button from "../Components/Button";
+import StudentCard from "../Components/StudentCard";
 
 
 function StudentForm(){
@@ -86,27 +87,21 @@ function StudentForm(){
             </form>
 
 
-            <div className="student-list">
-            <h2>My Students</h2>
             <div>
-                {students.map((s, index) => (
-            <div key={index}>
-            <h3>
-                {s.firstName} {s.lastName}
-            </h3>
-
-            <p>Graduation Year: {s.gradYear}</p>
-            <p>Course: {s.course}</p>
+            <h2>My Students</h2>
+           
+            <div className="student-list">
+             {students.map((student, index) => (
+            <StudentCard
+                key={index}
+                student={student}
+            />
+             ))}
             </div>
-  ))}
+
             </div>
-
-          
-            
-
-        </div>
-        </div>
-    )
-}
+            </div>
+    
+        )}
 
 export default StudentForm;

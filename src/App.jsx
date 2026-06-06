@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Header from './Components/Header'
-import StudentList from './Pages/StudentList'
 import StudentForm from './Pages/StudentForm'
 
 import './App.css'
