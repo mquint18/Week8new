@@ -37,11 +37,20 @@ function StudentForm(){
             gradYear: "",
             course: ""
             });
+
+    }
+
+     function DeleteStudent(index) {
+        const updatedStudents = students.filter(
+            (_, i) => i !== index
+        );
+
+        setStudents(updatedStudents);
     }
     return(
         <div>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="student-form">
 
                 <NewInput
                     name= "firstName"
@@ -70,6 +79,7 @@ function StudentForm(){
                     name = "course"
                     value = {student.course}
                     onChange={handleChange}
+                    className="pull-down"
                 >
                     <option value="">Select Course</option>
                     <option value="Math">Math</option>
@@ -88,13 +98,14 @@ function StudentForm(){
 
 
             <div>
-            <h2>My Students</h2>
+            <h2 className="card-head">My Students</h2>
            
             <div className="student-list">
              {students.map((student, index) => (
             <StudentCard
                 key={index}
                 student={student}
+                onDelete={() => DeleteStudent(index)}
             />
              ))}
             </div>

@@ -1,0 +1,105 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: Inter, Arial, sans-serif;
+  background: #444444;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+.head-div {
+    margin: 10px;
+    background-color: white;
+    border: black solid 2px;
+    border-radius: 10px;
+
+
+}
+
+h1{
+    color:#444444;
+    background-color: white;
+}
+
+.card-head{
+    color: white;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.student-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+.student-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1f2937;
+  font-size: 2.5rem;
+}
+
+.student-form {
+    flex: auto;
+    margin: 10px;
+    padding: 20px;
+    background-color:white;
+    color: #444444;
+    text-align: center;
+    border: black solid 2px;
+    border-radius: 10px;
+
+}
+
+.input {
+    margin: 10px;
+    padding: 5px;
+    font-size: medium;
+}
+
+.pull-down {
+    margin: 10px;
+    padding: 5px;
+    font-size: medium;
+}
+
+.clicky{
+    color: #444444;
+    background-color: white;
+    padding: 5px;
+    margin: 5px;
+    border: black solid 1px;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+.student-card {
+
+    border: black solid 2px;
+    color:#444444;
+    background-color: white;
+    margin: 60px;
+    padding-left: 4px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.student-name{
+    color: white;
+    background-color: #444444;
+    border: black solid 1px;
+    margin-left:  100px;
+    margin-right: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
